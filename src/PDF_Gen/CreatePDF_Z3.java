@@ -15,7 +15,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-public class CreatePDF_Z3 {
+public class CreatePDF_Z3 extends  AbstractCreatePDF{
     String var;
     String key;
     String[] array;
@@ -24,12 +24,13 @@ public class CreatePDF_Z3 {
     public CreatePDF_Z3(String var,String key) throws DocumentException, IOException, URISyntaxException {
         this.var = var;
         this.key = key;
-        if (var.equals(""))
-            this.var = T3Z3Random.gen();
+        if (var.equals("")) {
+            var = T3Z3Random.gen();
+        }
         this.array = VarParse.parse(var);
         if (key.equals(""))
             this.key = VarParse.encode(array);
-        change();
+//        change();
         create();
     }
     private void change(){//замена случайного числа, на соответствующую строку
@@ -47,56 +48,15 @@ public class CreatePDF_Z3 {
         times = BaseFont.createFont("fonts/times.ttf","cp1251",BaseFont.EMBEDDED);
         Paragraph varStringPDF=new Paragraph("Номер Варианта : " + String.valueOf(key),new Font(times,14));
 
-        Paragraph emptyParagpaph  = new Paragraph(" " ,new Font(times,14));// Пустая строка для отступа в файле
-
-        PdfPTable table = new PdfPTable(10);
-        addTableHeader(table);
-        addRows(table);
-        //addCustomRows(table);
-
+//        PdfPTable table = new PdfPTable(7);
+//        addTableHeader(table,Constants.headersDZ3T1,11);
+//        addRows(table, array, 14,0,7);
         document.add(varStringPDF);
-        document.add(emptyParagpaph);
-        document.add(table);
+//        document.add(emptyParagpaph);
+//        document.add(table);
+
+
         document.close();
     }
-
-    private void addTableHeader(PdfPTable table) {
-        for (String i:Constants.headersDZ1T1)
-            table.addCell(new Paragraph(i,new Font(times,11)));
-
-//        Stream.of("column header 1", "column header 2", "column header 3")
-//                .forEach(columnTitle -> {
-//                    PdfPCell header = new PdfPCell();
-//                    header.setBackgroundColor(BaseColor.WHITE);
-//                    header.setPhrase(new Phrase(columnTitle));
-//                    table.addCell(header);
-//                });
-    }
-
-    private void addRows(PdfPTable table) {
-        for (String i : array)
-            table.addCell(new Paragraph(i,new Font(times,14)));
-    }
-
-    /*private static void addCustomRows(PdfPTable table) throws URISyntaxException, BadElementException, IOException {
-
-//        Image img = Image.getInstance("image.png");
-//        img.scalePercent(10);
-//
-//        PdfPCell imageCell = new PdfPCell(img);
-//        table.addCell(imageCell);
-
-        PdfPCell toplAlignCell = new PdfPCell(new Phrase("row 2, col 1"));
-        toplAlignCell.setHorizontalAlignment(Element.ALIGN_TOP);
-        table.addCell(toplAlignCell);
-
-        PdfPCell horizontalAlignCell = new PdfPCell(new Phrase("row 2, col 2"));
-        horizontalAlignCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-        table.addCell(horizontalAlignCell);
-
-        PdfPCell verticalAlignCell = new PdfPCell(new Phrase("row 2, col 3"));
-        verticalAlignCell.setVerticalAlignment(Element.ALIGN_BOTTOM);
-        table.addCell(verticalAlignCell);
-    }*/
 
 }

@@ -15,6 +15,8 @@ public class VarParse {
     public static boolean parseAble4Data(String s){
         return true;
     }
+
+
     public static String[] parse(String s){
         String[] vect = s.split("-");
         for (int i = 0; i < vect.length; ++i)

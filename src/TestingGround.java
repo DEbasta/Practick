@@ -95,9 +95,9 @@ public class TestingGround {
         String decoded = (new BigInteger(encoded, 36)).toString();
         System.out.println(decoded);
         System.out.println(decoded.length());
-        String ss = "s";
-        ss = "0".concat(ss);
-        System.out.println(ss);
+        for (int i = 0; i < 10; ++i){
+            System.out.println(i);
+        }
 
     }
 }
