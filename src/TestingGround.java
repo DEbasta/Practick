@@ -99,5 +99,14 @@ public class TestingGround {
             System.out.println(i);
         }
 
+        String s1 = "1234567890";
+//        s1 = s1.substring(1,s1.length());
+        int i = 0;
+        while (s1.length()>0){
+            String s2 = s1.substring(0,2);
+            s1 = s1.substring(2,s1.length());
+            System.out.println(s2);
+        }
+
     }
 }

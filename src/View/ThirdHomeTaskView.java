@@ -37,10 +37,12 @@ public class ThirdHomeTaskView extends JFrame{
     button1.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {// обработка нажатия клавиши
             boolean flag1 = VarParse.parseAble(numberOfGenVarField.getText());//предварительная проверка заданного в поле значения(нужно для ускоренной проверки неправильно заданных значений)
+            CreatePDF_Z3 createPDFZ3;
             if (flag1){
                 if (numberOfGenVarField.getText().equals("")||numberOfGenVarField.getText().equals("Поле для повторной генерации")) {//создание варианта при незадданном значении варианта
                     try {
-                        CreatePDF_Z3 createPDFZ3 = new CreatePDF_Z3("","");
+                        createPDFZ3 = new CreatePDF_Z3("","");
+                        createPDFZ3.create();
                     } catch (DocumentException documentException) {
                         documentException.printStackTrace();
                     } catch (IOException ioException) {
@@ -51,9 +53,10 @@ public class ThirdHomeTaskView extends JFrame{
                 }
                 else {
                     String decoded_s = (new BigInteger(numberOfGenVarField.getText(), 36)).toString();//создание варианта при заданном значении варианта
-                    if (decoded_s.length()==50){
+                    if (decoded_s.length()==52){
                         try {
-                            CreatePDF_Z3 createPDFZ3 = new CreatePDF_Z3(decoded_s,numberOfGenVarField.getText());
+                            createPDFZ3 = new CreatePDF_Z3(decoded_s,numberOfGenVarField.getText());
+                            createPDFZ3.create();
                         } catch (DocumentException documentException) {
                             documentException.printStackTrace();
                         } catch (IOException ioException) {

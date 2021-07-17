@@ -21,7 +21,7 @@ public class CreatePDF {
     static BaseFont times;
     public CreatePDF(String var) throws DocumentException, IOException, URISyntaxException {
         this.var = var;
-        this.array = VarParse.parse(var);
+        this.array = VarParse.parse(var,true);
         change();
         create();
     }

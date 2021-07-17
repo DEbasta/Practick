@@ -17,17 +17,19 @@ public class T3Z3Random {
 
         varNum = varNum.concat(String.valueOf(random.nextInt(5)+47) + "-");//4 параметр 1 таблица
 
-        varNum = varNum.concat(String.valueOf(random.nextInt(15)+1) + "-");//5 параметр 1 таблица
+        varNum = varNum.concat(String.valueOf(random.nextInt(15)+35) + "-");//5 параметр 1 таблица
 
-        varNum = varNum.concat(String.valueOf(random.nextInt(4)+1) + "-");//6 параметр 1 таблица
+        varNum = varNum.concat(String.valueOf(random.nextInt(15)+1) + "-");//6 параметр 1 таблица
 
-        varNum = varNum.concat(String.valueOf(random.nextInt(51)+10) + "-");//7 параметр 1 таблица
+        varNum = varNum.concat(String.valueOf(random.nextInt(4)+1) + "-");//7 параметр 1 таблица
 
-        varNum = varNum.concat(String.valueOf(random.nextInt(7)+1) + "-");//8 параметр 1 таблица
+        varNum = varNum.concat(String.valueOf(random.nextInt(51)+10) + "-");//8 параметр 1 таблица
 
-        varNum = varNum.concat(String.valueOf(random.nextInt(41)+60) + "-");//9 параметр 1 таблица
+        varNum = varNum.concat(String.valueOf(random.nextInt(7)+1) + "-");//9 параметр 1 таблица
 
-        varNum = varNum.concat(String.valueOf(random.nextInt(15)+1) + "-");//10 параметр 1 таблица
+        varNum = varNum.concat(String.valueOf(random.nextInt(41)+50) + "-");//10 параметр 1 таблица
+
+        varNum = varNum.concat(String.valueOf(random.nextInt(15)+1) + "-");//11 параметр 1 таблица
 
 
 
