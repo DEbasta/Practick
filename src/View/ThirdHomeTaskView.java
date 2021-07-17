@@ -1,5 +1,6 @@
 package View;
 
+import Constants.Constants;
 import Logic.VarParse;
 import PDF_Gen.CreatePDF_Z3;
 import com.itextpdf.text.DocumentException;
@@ -18,13 +19,13 @@ public class ThirdHomeTaskView extends JFrame{
     public ThirdHomeTaskView(String s, boolean b){
     JDialog dialog = createDialogWindow(s,b);
 
-    JTextField numberOfGenVarField = new JTextField("Поле для повторной генерации");
+    JTextField numberOfGenVarField = new JTextField(Constants.emptyFieldValue);
     numberOfGenVarField.setPreferredSize(new Dimension(200,20));
 
 
     numberOfGenVarField.addFocusListener(new FocusListener() {
         public void focusGained(FocusEvent e) {
-            numberOfGenVarField.setText("");
+            numberOfGenVarField.setText(Constants.nothingString);
         }
         @Override
         public void focusLost(FocusEvent e) {}
@@ -33,15 +34,15 @@ public class ThirdHomeTaskView extends JFrame{
 
 
     // Кнопки для создания диалоговых окон
-    JButton button1 = new JButton("Cгенерировать ДЗ №3");//создание кнопки
+    JButton button1 = new JButton(Constants.thirdViewButton);//создание кнопки
     button1.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {// обработка нажатия клавиши
             boolean flag1 = VarParse.parseAble(numberOfGenVarField.getText());//предварительная проверка заданного в поле значения(нужно для ускоренной проверки неправильно заданных значений)
             CreatePDF_Z3 createPDFZ3;
             if (flag1){
-                if (numberOfGenVarField.getText().equals("")||numberOfGenVarField.getText().equals("Поле для повторной генерации")) {//создание варианта при незадданном значении варианта
+                if (numberOfGenVarField.getText().equals(Constants.nothingString)||numberOfGenVarField.getText().equals(Constants.emptyFieldValue)) {//создание варианта при незадданном значении варианта
                     try {
-                        createPDFZ3 = new CreatePDF_Z3("","");
+                        createPDFZ3 = new CreatePDF_Z3(Constants.nothingString,Constants.nothingString);
                         createPDFZ3.create();
                     } catch (DocumentException documentException) {
                         documentException.printStackTrace();
@@ -52,8 +53,8 @@ public class ThirdHomeTaskView extends JFrame{
                     }
                 }
                 else {
-                    String decoded_s = (new BigInteger(numberOfGenVarField.getText(), 36)).toString();//создание варианта при заданном значении варианта
-                    if (decoded_s.length()==52){
+                    String decoded_s = (new BigInteger(numberOfGenVarField.getText(), Constants.encodingRadix)).toString();//создание варианта при заданном значении варианта
+                    if (decoded_s.length() == Constants.decodedNumberDZ3){
                         try {
                             createPDFZ3 = new CreatePDF_Z3(decoded_s,numberOfGenVarField.getText());
                             createPDFZ3.create();
@@ -86,7 +87,7 @@ public class ThirdHomeTaskView extends JFrame{
         {
             JDialog dialog = new JDialog(this, title, modal);
             dialog.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            dialog.setSize(180, 100);
+            dialog.setSize(Constants.dialogViewWidth, Constants.dialogViewHeight);
             return dialog;
         }
 
@@ -94,28 +95,28 @@ public class ThirdHomeTaskView extends JFrame{
         {
             JDialog dialog = new JDialog(this, title, modal);
             dialog.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            dialog.setSize(550, 200);
+            dialog.setSize(Constants.mainViewWidth, Constants.mainViewHeight);
             return dialog;
         }
 
         public void result(boolean flag1) {
-            JDialog dialog = createDialog("Результат", true);
+            JDialog dialog = createDialog(Constants.dialogViewName, true);
             JPanel panel = new JPanel();
             JTextField textArea;
             if (flag1) {
-                textArea = new JTextField("Готово");
+                textArea = new JTextField(Constants.goodResult);
                 textArea.setEditable(false);
                 panel.add(textArea);
 
             }
             else {
-                textArea = new JTextField("Параметры заданы неверно");
+                textArea = new JTextField(Constants.badResult);
                 textArea.setEditable(false);
                 panel.add(textArea);
 
             }
 
-            JButton buttonOK = new JButton("ok");
+            JButton buttonOK = new JButton(Constants.okButton);
             buttonOK.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     dialog.dispose();

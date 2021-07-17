@@ -1,5 +1,7 @@
 package View;
 
+import Constants.Constants;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,28 +14,28 @@ public class MainView extends JFrame{
     JButton button3;
 
     public MainView() {
-        super("VarGenKTO");
+        super(Constants.mainViewName);
         // Выход из программы при закрытии
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         // Поле для сгенерированного варианта
 
         // Кнопки для создания диалоговых окон
-        button1 = new JButton("ДЗ №1");
+        button1 = new JButton(Constants.mainViewFirstButton);
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new FirstHomeTaskView("VarGenKTO_HomeTask№1",true);
+                new FirstHomeTaskView(Constants.firstViewName,true);
             }
         });
-        button2 = new JButton("ДЗ №2");
+        button2 = new JButton(Constants.mainViewSecondButton);
         button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 new SecondHomeTaskView();
             }
         });
-        button3 = new JButton("ДЗ №3");
+        button3 = new JButton(Constants.mainViewThirdButton);
         button3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new ThirdHomeTaskView("VarGenKTO_HomeTask№3",true);
+                new ThirdHomeTaskView(Constants.thirdViewName,true);
             }
         });
         // Создание панели содержимого с размещением кнопок
@@ -43,17 +45,10 @@ public class MainView extends JFrame{
         contents.add(button3);
         setContentPane(contents);
         // Определение размера и открытие окна
-        setSize(550, 200);
+        setSize(Constants.mainViewWidth, Constants.mainViewHeight);
         setVisible(true);
     }
 
-    private JDialog createDialog(String title, boolean modal)
-    {
-        JDialog dialog = new JDialog(this, title, modal);
-        dialog.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        dialog.setSize(180, 100);
-        return dialog;
-    }
 
 
     public static void main(String[] args) {

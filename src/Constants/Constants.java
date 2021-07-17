@@ -1,6 +1,68 @@
 package Constants;
 
 public class Constants {
+
+    public static final String mainViewName = "VarGenKTO";
+
+    public static final String firstViewName = "VarGenKTO_HomeTask№1";
+
+    public static final String secondViewName = "VarGenKTO_HomeTask№2";
+
+    public static final String thirdViewName = "VarGenKTO_HomeTask№3";
+
+    public static final String dialogViewName = "Result";
+
+    public static final String mainViewFirstButton = "ДЗ №1";
+
+    public static final String mainViewSecondButton = "ДЗ №2";
+
+    public static final String mainViewThirdButton = "ДЗ №3";
+
+    public static final String thirdViewButton = "Cгенерировать ДЗ №3";
+
+    public static final String okButton = "Ok";
+
+    public static final String goodResult = "Готово";
+
+    public static final String badResult = "Параметры заданы неверно";
+
+    public static final int mainViewWidth = 550;
+
+    public static final int mainViewHeight = 200;
+
+    public static final int dialogViewWidth = 180;
+
+    public static final int dialogViewHeight = 100;
+
+    public static final int encodingRadix = 36;
+
+    public static final String nothingString = "";
+
+    public static final String emptyFieldValue = "Поле для повторной генерации";
+
+    public static final String documentFormat = ".pdf";
+
+    public static final String documentNameDZ1 = "Variant_DZ1_";
+
+    public static final String documentNameDZ2 = "Variant_DZ2_";
+
+    public static final String documentNameDZ3 = "Variant_DZ3_";
+
+    public static final String varID = "Идентификатор Варианта : ";
+
+    public static final int singleColumn = 1;
+
+    public static final int twoColumns = 2;
+
+    public static final int fourColumns = 4;
+
+    public static final int sevenColumns = 7;
+
+    public static final int eightColumns = 8;
+
+    public static final int decodedNumberDZ3 = 52;
+
+
     public static final String [] raz = {"BH-10","IDC-10MS","ГРПМШ2-30ГО2-В","OHП-ВГ-1-18","ГРПМ2-46ШО2-В",
                            "СНП58-16/94х9В-20","СНО63-32/95х9В-20","ППИС (РШ2Н-2)","ОНП-ВГ-1-32/46х11-В21","СНО53-60/93×9Р-23",
                            "СНП59-32/95×11Р-20-2","ГРПМ1-31ШП2-К","BH2-34 (DS1014-34, IDC2-34MS)","BH-24 (DS1013-24S, IDC-24MS)","СНО48-108/62х40В-6М-В"};
@@ -12,7 +74,7 @@ public class Constants {
     public static final String[] headersDZ1T1 = {"Тип корпуса Разъёма","Кол-во","Тип корпуса МС","Кол-во","Коэффициент дезинтеграции","Зазор между ЭК,мм","Расстояние по торцу,мм","dпл,мм"};
 
     public static final String tz1DZ3 = "Задача No3. Провести расчёт надёжности функциональной ячейки (ФЯ) и сделать вывод, " +
-            "удовлетворяет ли ФЯ требованиям технического задания." +
+            "удовлетворяет ли ФЯ требованиям технического задания.\n" +
             "        В табл. 4 приведены варианты задания, различные по ожидаемому сроку наработки на отказ\n" +
             "Tср, часов, номиналу и количеству элементов ФЯ и условиям эксплуатации.\n" +
             "        На рис. рис. 4-7 приведены графики для расчёта поправочного коэффициента αi(T, kн) в\n" +
@@ -62,9 +124,12 @@ public class Constants {
 
     public static final String headerSingleDZ3T5_3 = "Значения поправочных коэффициентов, учитывающих атмосферное давление (высоту над уровнем моря)";
 
-    public static final String[] headersDZ3T6 = {"Элемент", "Обозначение", "λ 0t· 10^(–6), 1/ч", "Кол-во, шт."};
+    public static final String rowDZ3T4Zeroes = " 000";
 
     public static final String[] rowDZ3T4UslExpl = {"Лабораторный", "Стационарные", "Полевые", "Корабельные", "Автомобильные", "Железнодорожные", "Самолётные"};
+
+    public static final String[] headersDZ3T6 = {"Элемент", "Обозначение", "λ 0t· 10^(–6), 1/ч", "Кол-во, шт."};
+
     
     public static final String[] rowDZ3T5_1Coef = {"1,00","1,07", "1,37", "1,46", "1,57", "1,65"};
 
