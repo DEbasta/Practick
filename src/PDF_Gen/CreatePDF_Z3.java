@@ -11,7 +11,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import static Constants.Constants.headersDZ3T6;
 import static Constants.Constants.rowDZ3T4UslExpl;
 
 public class CreatePDF_Z3 extends  AbstractCreatePDF{
@@ -57,11 +56,11 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
         Paragraph tz2 = new Paragraph(Constants.tz2DZ3, new Font(times,fontSize11));
         Paragraph tz3 = new Paragraph(Constants.tz3DZ3, new Font(times,fontSize11));
         //строки и их распооложение для таблиц
-        Paragraph table4Name = new Paragraph(Constants.table4Name, new Font(times,fontSize8));
+        Paragraph table4Name = new Paragraph(Constants.table4DZ3Name, new Font(times,fontSize8));
         table4Name.setAlignment(Element.ALIGN_RIGHT);
-        Paragraph table5Name = new Paragraph(Constants.table5Name, new Font(times,fontSize8));
+        Paragraph table5Name = new Paragraph(Constants.table5DZ3Name, new Font(times,fontSize8));
         table5Name.setAlignment(Element.ALIGN_RIGHT);
-        Paragraph table6Name = new Paragraph(Constants.table6Name, new Font(times,fontSize8));
+        Paragraph table6Name = new Paragraph(Constants.table6DZ3Name, new Font(times,fontSize8));
         table6Name.setAlignment(Element.ALIGN_RIGHT);
         //строки и их распооложение для картинок
         Paragraph nameOfImage4 = new Paragraph(Constants.nameOfImage4, new Font(times,fontSize11));

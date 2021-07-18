@@ -29,7 +29,7 @@ public class MainView extends JFrame{
         button2 = new JButton(Constants.mainViewSecondButton);
         button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new SecondHomeTaskView();
+                new SecondHomeTaskView(Constants.secondViewName, true);
             }
         });
         button3 = new JButton(Constants.mainViewThirdButton);

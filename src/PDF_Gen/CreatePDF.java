@@ -27,9 +27,9 @@ public class CreatePDF {
     }
     private void change(){
         int number = Integer.parseInt(array[0]);
-        array[0] = Constants.raz[number-1];
+        array[0] = Constants.rowDDZ1T1raz[number-1];
         number = Integer.parseInt(array[2]);
-        array[2] = Constants.ms[number-1];
+        array[2] = Constants.rowDZ1T1ms[number-1];
     }
     private void create() throws IOException, DocumentException, URISyntaxException {
         Document document = new Document();
