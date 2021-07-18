@@ -1,5 +1,6 @@
 package PDF_Gen;
 
+
 import Constants.Constants;
 import Logic.T3Z3Random;
 import Logic.VarParse;
@@ -133,8 +134,14 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
         addRows(table6,row6_7,fontSize11,0,4);
         addRows(table6,row6_8,fontSize11,0,4);
 
-
-
+        Image image4 = Image.getInstance("Images/DZ3Image4.png");
+        image4.scalePercent(50);
+        Image image5 = Image.getInstance("Images/DZ3Image5.png");
+        image5.scalePercent(50);
+        Image image6 = Image.getInstance("Images/DZ3Image6.png");
+        image6.scalePercent(50);
+        Image image7 = Image.getInstance("Images/DZ3Image7.png");
+        image7.scalePercent(50);
 
 
 
@@ -147,15 +154,20 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
         document.add(table4Name);
         document.add(emptyParagpaph);
         //add image here
+        document.add(image4);
         document.add(nameOfImage4);
         document.add(emptyParagpaph);
         //add image here
+        document.add(image5);
+        document.add(emptyParagpaph);
         document.add(nameOfImage5);
         document.add(emptyParagpaph);
         //add image here
+        document.add(image6);
         document.add(nameOfImage6);
         document.add(emptyParagpaph);
         //add image here
+        document.add(image7);
         document.add(nameOfImage7);
         document.add(emptyParagpaph);
         document.add(tz2);
@@ -221,5 +233,6 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
         }
         return spclRow;
     }
+
 
 }
