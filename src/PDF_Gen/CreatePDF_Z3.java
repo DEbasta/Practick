@@ -18,7 +18,13 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
     String var;
     String key;
     String[] array;
-    int numberOfFinalParam = 15;
+    private final int keysAmount = 26;
+    private final int numberOfFinalParam = 15;
+    private final int rowsTable5_2amount = 3;
+    private final int rowsTable5_3amount = 4;
+    private final int rowsTable6amount = 8;
+    private final int imagesCount = 4;
+
 
     public CreatePDF_Z3(String var,String key) throws DocumentException, IOException, URISyntaxException {
         this.var = var;
@@ -28,7 +34,7 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
             this.array = VarParse.parse(var,true,0);
         }
         else
-            this.array = VarParse.parse(var,false,26);
+            this.array = VarParse.parse(var,false,keysAmount);
         if (key.equals(Constants.nothingString))
             this.key = VarParse.encode(array);
         change();
@@ -41,7 +47,7 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
     }
     public void create() throws IOException, DocumentException, URISyntaxException {
         Document document = new Document();
-        PdfWriter.getInstance(document, new FileOutputStream(Constants.documentNameDZ3 + key + Constants.documentFormat));
+        PdfWriter.getInstance(document, new FileOutputStream(Constants.documentNameDZ3 + key + Constants.documentFormat_pdf));
 
         String[] finalArray;
 
@@ -96,15 +102,15 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
 
         PdfPTable table5_2 = new PdfPTable(Constants.twoColumns);
         addTableHeader(table5_2,Constants.headersDZ3T5_2,fontSize11);
-        for (int i = 0; i < 3; ++i){
+        for (int i = 0; i < rowsTable5_2amount; ++i){
             String[] row5_2 = {Constants.rowDZ3T5_2Vlaj[i],Constants.rowDZ3T5_2Coef[i]};
             addRows(table5_2, row5_2,fontSize11,0,2);
         }
-        
+
 
         PdfPTable table5_3 = new PdfPTable(Constants.fourColumns);
         addTableHeader(table5_3,Constants.headersDZ3T5_3,fontSize11);
-        for (int i = 0; i < 4;++i) {
+        for (int i = 0; i < rowsTable5_3amount;++i) {
             String[] row5_3 = {Constants.rowDZ3T5_3Vis[i], Constants.rowDZ3T5_3Coef[i], Constants.rowDZ3T5_3Vis[i+4], Constants.rowDZ3T5_3Coef[i+4]};
             addRows(table5_3, row5_3, fontSize11, 0 , 4);
         }
@@ -113,20 +119,18 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
 
         PdfPTable table6 = new PdfPTable(Constants.fourColumns);
         addTableHeader(table6,Constants.headersDZ3T6,fontSize11);
-        for (int i = 0; i < 8; ++i){
+        for (int i = 0; i < rowsTable6amount; ++i){
             String[] row6 = {Constants.rowDZ3T6Elem[i], Constants.rowDZ3T6Obozm[i], Constants.rowDZ3T6Lambd[i], Constants.rowDZ3T6Col[i]};
             addRows(table6,row6,fontSize11,0,4);
         }
 
+        Image[] images;
+        images = new Image[4];
+        for (int i = 0; i < imagesCount; ++i){
+            images[i] = Image.getInstance(Constants.DZ3ImagePath + String.valueOf(i+4) + Constants.documentFormat_png);
+            images[i].scalePercent(50);
+        }
 
-        Image image4 = Image.getInstance("Images/DZ3Image4.png");
-        image4.scalePercent(50);
-        Image image5 = Image.getInstance("Images/DZ3Image5.png");
-        image5.scalePercent(50);
-        Image image6 = Image.getInstance("Images/DZ3Image6.png");
-        image6.scalePercent(50);
-        Image image7 = Image.getInstance("Images/DZ3Image7.png");
-        image7.scalePercent(50);
 
 
 
@@ -139,20 +143,20 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
         document.add(table4Name);
         document.add(emptyParagpaph);
         //add image here
-        document.add(image4);
+        document.add(images[0]);
         document.add(nameOfImage4);
         document.add(emptyParagpaph);
         //add image here
-        document.add(image5);
+        document.add(images[1]);
         document.add(emptyParagpaph);
         document.add(nameOfImage5);
         document.add(emptyParagpaph);
         //add image here
-        document.add(image6);
+        document.add(images[2]);
         document.add(nameOfImage6);
         document.add(emptyParagpaph);
         //add image here
-        document.add(image7);
+        document.add(images[3]);
         document.add(nameOfImage7);
         document.add(emptyParagpaph);
         document.add(tz2);

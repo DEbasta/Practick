@@ -44,7 +44,9 @@ public class Constants {
 
     public static final String emptyFieldValue = "Поле для повторной генерации";
 
-    public static final String documentFormat = ".pdf";
+    public static final String documentFormat_pdf = ".pdf";
+
+    public static final String documentFormat_png = ".png";
 
     public static final String documentNameDZ1 = "Variant_DZ1_";
 
@@ -69,6 +71,12 @@ public class Constants {
     public static final int decodedNumberDZ1 = 38;
 
     public static final int decodedNumberDZ3 = 52;
+
+    public static final String DZ2ImagePathEskiz = "Images/DZ2T2EskizImage";
+
+    public static final String DZ2ImagePathFormula = "Images/DZ2T2FormulaImage";
+
+    public static final String DZ3ImagePath = "Images/DZ3Image";
 
 
 

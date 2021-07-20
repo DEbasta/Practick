@@ -4,7 +4,6 @@ import Constants.Constants;
 import Logic.T1Random;
 import Logic.VarParse;
 import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
@@ -16,7 +15,8 @@ public class CreatePDF_Z1 extends AbstractCreatePDF{
     String var;
     String key;
     String[] array;
-    int numberOfFinalParam = 14;
+    private final int numberOfFinalParam = 14;
+    private final int keysAmount = 19;
 
     public CreatePDF_Z1(String var, String key) throws DocumentException, IOException, URISyntaxException {
         this.var = var;
@@ -26,7 +26,7 @@ public class CreatePDF_Z1 extends AbstractCreatePDF{
             this.array = VarParse.parse(var,true,0);
         }
         else
-            this.array = VarParse.parse(var,false, 19);
+            this.array = VarParse.parse(var,false, keysAmount);
         if (key.equals(Constants.nothingString))
             this.key = VarParse.encode(array);
         change();
@@ -41,7 +41,7 @@ public class CreatePDF_Z1 extends AbstractCreatePDF{
     }
     public void create() throws IOException, DocumentException, URISyntaxException {
         Document document = new Document();
-        PdfWriter.getInstance(document, new FileOutputStream(Constants.documentNameDZ1 + String.valueOf(key) + Constants.documentFormat));
+        PdfWriter.getInstance(document, new FileOutputStream(Constants.documentNameDZ1 + String.valueOf(key) + Constants.documentFormat_pdf));
 
         String[] finalArray;
 
