@@ -2,7 +2,7 @@ package Logic;
 
 import java.util.Random;
 
-public class T3Z3Random {
+public class T3Random {
     public static String gen(){
         final Random random = new Random();
         int var;

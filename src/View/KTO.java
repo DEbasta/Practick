@@ -1,7 +1,7 @@
 package View;
 
-import Logic.T1Z1Random;
-import PDF_Gen.CreatePDF;
+import Logic.T1Random;
+import PDF_Gen.CreatePDF_Z1;
 import com.itextpdf.text.DocumentException;
 
 import javax.swing.*;
@@ -29,7 +29,7 @@ public class KTO extends JFrame
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 modalFlag=1;
-                numberOfGenVarField.setText(String.valueOf(T1Z1Random.gen()));
+                numberOfGenVarField.setText(String.valueOf(T1Random.gen()));
             }
         });
         JButton button2 = new JButton("Cгенерировать задания");
@@ -37,15 +37,15 @@ public class KTO extends JFrame
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(modalFlag != 0)
-                try {
-                    CreatePDF path = new CreatePDF(numberOfGenVarField.getText());
-                } catch (DocumentException documentException) {
-                    documentException.printStackTrace();
-                } catch (IOException ioException) {
-                        ioException.printStackTrace();
-                } catch (URISyntaxException uriSyntaxException) {
-                    uriSyntaxException.printStackTrace();
-                }
+//                try {
+////                    CreatePDF_Z1 path = new CreatePDF_Z1(numberOfGenVarField.getText());
+//                } catch (DocumentException documentException) {
+//                    documentException.printStackTrace();
+//                } catch (IOException ioException) {
+//                        ioException.printStackTrace();
+//                } catch (URISyntaxException uriSyntaxException) {
+//                    uriSyntaxException.printStackTrace();
+//                }
                 result(modalFlag);
 
             }

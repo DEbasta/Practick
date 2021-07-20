@@ -2,7 +2,7 @@ package PDF_Gen;
 
 
 import Constants.Constants;
-import Logic.T3Z3Random;
+import Logic.T3Random;
 import Logic.VarParse;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -24,11 +24,11 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
         this.var = var;
         this.key = key;
         if (var.equals(Constants.nothingString)) {
-            var = T3Z3Random.gen();
-            this.array = VarParse.parse(var,true);
+            var = T3Random.gen();
+            this.array = VarParse.parse(var,true,0);
         }
         else
-            this.array = VarParse.parse(var,false);
+            this.array = VarParse.parse(var,false,26);
         if (key.equals(Constants.nothingString))
             this.key = VarParse.encode(array);
         change();
@@ -47,11 +47,11 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
 
         finalArray = new String[numberOfFinalParam];
 
-        finalArray = VarParse.specialParseDZ3(array);
+        finalArray = VarParse.specialParseDZ3(array,numberOfFinalParam);
 
         document.open();
 
-        Paragraph varStringPDF=new Paragraph( Constants.varID + String.valueOf(key),new Font(times,fontSize14));
+        Paragraph varStringPDF=new Paragraph( Constants.varID + key,new Font(times,fontSize14));
         // строки ТЗ для ДЗ
         Paragraph tz1 = new Paragraph(Constants.tz1DZ3, new Font(times,fontSize11));
         Paragraph tz2 = new Paragraph(Constants.tz2DZ3, new Font(times,fontSize11));
@@ -96,43 +96,28 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
 
         PdfPTable table5_2 = new PdfPTable(Constants.twoColumns);
         addTableHeader(table5_2,Constants.headersDZ3T5_2,fontSize11);
-        String[] row5_2_1 = {Constants.rowDZ3T5_2Vlaj[0],Constants.rowDZ3T5_2Coef[0]};
-        String[] row5_2_2 = {Constants.rowDZ3T5_2Vlaj[1],Constants.rowDZ3T5_2Coef[1]};
-        String[] row5_2_3 = {Constants.rowDZ3T5_2Vlaj[2],Constants.rowDZ3T5_2Coef[2]};
-        addRows(table5_2,row5_2_1,fontSize11,0,2);
-        addRows(table5_2,row5_2_2,fontSize11,0,2);
-        addRows(table5_2,row5_2_3,fontSize11,0,2);
+        for (int i = 0; i < 3; ++i){
+            String[] row5_2 = {Constants.rowDZ3T5_2Vlaj[i],Constants.rowDZ3T5_2Coef[i]};
+            addRows(table5_2, row5_2,fontSize11,0,2);
+        }
+        
 
         PdfPTable table5_3 = new PdfPTable(Constants.fourColumns);
         addTableHeader(table5_3,Constants.headersDZ3T5_3,fontSize11);
-        String[] row5_3_1 = {Constants.rowDZ3T5_3Vis[0], Constants.rowDZ3T5_3Coef[0], Constants.rowDZ3T5_3Vis[4], Constants.rowDZ3T5_3Coef[4]};
-        String[] row5_3_2 = {Constants.rowDZ3T5_3Vis[1], Constants.rowDZ3T5_3Coef[1], Constants.rowDZ3T5_3Vis[5], Constants.rowDZ3T5_3Coef[5]};
-        String[] row5_3_3 = {Constants.rowDZ3T5_3Vis[2], Constants.rowDZ3T5_3Coef[2], Constants.rowDZ3T5_3Vis[6], Constants.rowDZ3T5_3Coef[6]};
-        String[] row5_3_4 = {Constants.rowDZ3T5_3Vis[3], Constants.rowDZ3T5_3Coef[3], Constants.rowDZ3T5_3Vis[7], Constants.rowDZ3T5_3Coef[7]};
-        addRows(table5_3,row5_3_1,fontSize11,0,4);
-        addRows(table5_3,row5_3_2,fontSize11,0,4);
-        addRows(table5_3,row5_3_3,fontSize11,0,4);
-        addRows(table5_3,row5_3_4,fontSize11,0,4);
+        for (int i = 0; i < 4;++i) {
+            String[] row5_3 = {Constants.rowDZ3T5_3Vis[i], Constants.rowDZ3T5_3Coef[i], Constants.rowDZ3T5_3Vis[i+4], Constants.rowDZ3T5_3Coef[i+4]};
+            addRows(table5_3, row5_3, fontSize11, 0 , 4);
+        }
+
 
 
         PdfPTable table6 = new PdfPTable(Constants.fourColumns);
         addTableHeader(table6,Constants.headersDZ3T6,fontSize11);
-        String[] row6_1 = {Constants.rowDZ3T6Elem[0], Constants.rowDZ3T6Obozm[0], Constants.rowDZ3T6Lambd[0], Constants.rowDZ3T6Col[0]};
-        String[] row6_2 = {Constants.rowDZ3T6Elem[1], Constants.rowDZ3T6Obozm[1], Constants.rowDZ3T6Lambd[1], Constants.rowDZ3T6Col[1]};
-        String[] row6_3 = {Constants.rowDZ3T6Elem[2], Constants.rowDZ3T6Obozm[2], Constants.rowDZ3T6Lambd[2], Constants.rowDZ3T6Col[2]};
-        String[] row6_4 = {Constants.rowDZ3T6Elem[3], Constants.rowDZ3T6Obozm[3], Constants.rowDZ3T6Lambd[3], Constants.rowDZ3T6Col[3]};
-        String[] row6_5 = {Constants.rowDZ3T6Elem[4], Constants.rowDZ3T6Obozm[4], Constants.rowDZ3T6Lambd[4], Constants.rowDZ3T6Col[4]};
-        String[] row6_6 = {Constants.rowDZ3T6Elem[5], Constants.rowDZ3T6Obozm[5], Constants.rowDZ3T6Lambd[5], Constants.rowDZ3T6Col[5]};
-        String[] row6_7 = {Constants.rowDZ3T6Elem[6], Constants.rowDZ3T6Obozm[6], Constants.rowDZ3T6Lambd[6], Constants.rowDZ3T6Col[6]};
-        String[] row6_8 = {Constants.rowDZ3T6Elem[7], Constants.rowDZ3T6Obozm[7], Constants.rowDZ3T6Lambd[7], Constants.rowDZ3T6Col[7]};
-        addRows(table6,row6_1,fontSize11,0,4);
-        addRows(table6,row6_2,fontSize11,0,4);
-        addRows(table6,row6_3,fontSize11,0,4);
-        addRows(table6,row6_4,fontSize11,0,4);
-        addRows(table6,row6_5,fontSize11,0,4);
-        addRows(table6,row6_6,fontSize11,0,4);
-        addRows(table6,row6_7,fontSize11,0,4);
-        addRows(table6,row6_8,fontSize11,0,4);
+        for (int i = 0; i < 8; ++i){
+            String[] row6 = {Constants.rowDZ3T6Elem[i], Constants.rowDZ3T6Obozm[i], Constants.rowDZ3T6Lambd[i], Constants.rowDZ3T6Col[i]};
+            addRows(table6,row6,fontSize11,0,4);
+        }
+
 
         Image image4 = Image.getInstance("Images/DZ3Image4.png");
         image4.scalePercent(50);

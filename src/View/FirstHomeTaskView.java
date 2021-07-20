@@ -1,6 +1,10 @@
 package View;
 
+import Constants.Constants;
 import Logic.VarParse;
+import PDF_Gen.CreatePDF_Z1;
+import PDF_Gen.CreatePDF_Z3;
+import com.itextpdf.text.DocumentException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,48 +12,70 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.io.IOException;
+import java.math.BigInteger;
+import java.net.URISyntaxException;
 
 public class FirstHomeTaskView extends JFrame{
     public FirstHomeTaskView(String s, boolean b){
         JDialog dialog = createDialogWindow(s,b);
 
-        JTextField numberOfGenVarField = new JTextField("Поле для повторной генерации");
-        JTextField data4HomeTask = new JTextField("Поле для данных к Заданию 3");
+        JTextField numberOfGenVarField = new JTextField(Constants.emptyFieldValue);
         numberOfGenVarField.setPreferredSize(new Dimension(200,20));
-        data4HomeTask.setPreferredSize(new Dimension(200,20));
+
 
         numberOfGenVarField.addFocusListener(new FocusListener() {
             public void focusGained(FocusEvent e) {
-                numberOfGenVarField.setText("");
+                numberOfGenVarField.setText(Constants.nothingString);
             }
             @Override
             public void focusLost(FocusEvent e) {}
         });
-        data4HomeTask.addFocusListener(new FocusListener() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                data4HomeTask.setText("");
-            }
 
-            @Override
-            public void focusLost(FocusEvent e) {
-
-            }
-        });
 
 
         // Кнопки для создания диалоговых окон
-        JButton button1 = new JButton("Cгенерировать ДЗ №1");
+        JButton button1 = new JButton(Constants.firstViewButton);//создание кнопки
         button1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                boolean flag1 = VarParse.parseAble(numberOfGenVarField.getText()), flag2 = VarParse.parseAble4Data(data4HomeTask.getText());
-                result(flag1,flag2);
+            public void actionPerformed(ActionEvent e) {// обработка нажатия клавиши
+                boolean flag1 = VarParse.parseAble(numberOfGenVarField.getText());//предварительная проверка заданного в поле значения(нужно для ускоренной проверки неправильно заданных значений)
+                CreatePDF_Z1 createPDFZ1;
+                if (flag1){
+                    if (numberOfGenVarField.getText().equals(Constants.nothingString)||numberOfGenVarField.getText().equals(Constants.emptyFieldValue)) {//создание варианта при незадданном значении варианта
+                        try {
+                            createPDFZ1 = new CreatePDF_Z1(Constants.nothingString,Constants.nothingString);
+                            createPDFZ1.create();
+                        } catch (DocumentException documentException) {
+                            documentException.printStackTrace();
+                        } catch (IOException ioException) {
+                            ioException.printStackTrace();
+                        } catch (URISyntaxException uriSyntaxException) {
+                            uriSyntaxException.printStackTrace();
+                        }
+                    }
+                    else {
+                        String decoded_s = (new BigInteger(numberOfGenVarField.getText(), Constants.encodingRadix)).toString();//создание варианта при заданном значении варианта
+                        if (decoded_s.length() == Constants.decodedNumberDZ1){
+                            try {
+                                createPDFZ1 = new CreatePDF_Z1(decoded_s,numberOfGenVarField.getText());
+                                createPDFZ1.create();
+                            } catch (DocumentException documentException) {
+                                documentException.printStackTrace();
+                            } catch (IOException ioException) {
+                                ioException.printStackTrace();
+                            } catch (URISyntaxException uriSyntaxException) {
+                                uriSyntaxException.printStackTrace();
+                            }
+                        }else flag1 = false;
+                    }
+                }
+                result(flag1);
             }
         });
         JPanel contents = new JPanel();
         contents.add(button1);
         contents.add(numberOfGenVarField);
-        contents.add(data4HomeTask);
+
 
         dialog.add(contents);
         // Определение размера и открытие окна
@@ -62,7 +88,7 @@ public class FirstHomeTaskView extends JFrame{
     {
         JDialog dialog = new JDialog(this, title, modal);
         dialog.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        dialog.setSize(180, 100);
+        dialog.setSize(Constants.dialogViewWidth, Constants.dialogViewHeight);
         return dialog;
     }
 
@@ -70,28 +96,28 @@ public class FirstHomeTaskView extends JFrame{
     {
         JDialog dialog = new JDialog(this, title, modal);
         dialog.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        dialog.setSize(550, 200);
+        dialog.setSize(Constants.mainViewWidth, Constants.mainViewHeight);
         return dialog;
     }
 
-    public void result(boolean flag1, boolean flag2) {
-        JDialog dialog = createDialog("Результат", true);
+    public void result(boolean flag1) {
+        JDialog dialog = createDialog(Constants.dialogViewName, true);
         JPanel panel = new JPanel();
         JTextField textArea;
-        if (flag1 && flag2) {
-            textArea = new JTextField("Готово");
+        if (flag1) {
+            textArea = new JTextField(Constants.goodResult);
             textArea.setEditable(false);
             panel.add(textArea);
 
         }
         else {
-            textArea = new JTextField("Параметры заданы неверно");
+            textArea = new JTextField(Constants.badResult);
             textArea.setEditable(false);
             panel.add(textArea);
 
         }
 
-        JButton buttonOK = new JButton("ok");
+        JButton buttonOK = new JButton(Constants.okButton);
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dialog.dispose();

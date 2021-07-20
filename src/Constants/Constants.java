@@ -60,9 +60,13 @@ public class Constants {
 
     public static final int fourColumns = 4;
 
+    public static final int sixColumns = 6;
+
     public static final int sevenColumns = 7;
 
     public static final int eightColumns = 8;
+
+    public static final int decodedNumberDZ1 = 38;
 
     public static final int decodedNumberDZ3 = 52;
 
@@ -90,7 +94,7 @@ public class Constants {
 
     public static final String[] headersDZ1T2 = {"Тип конструкции блока", "Толщина платы dпл, мм", "Ширина панели HК, мм", "Зазор между ФЯ Δhя , мм", "Кол-во ФЯ в блоке nфя, шт.", "Высота пайки Hm, мм"};
 
-    public static final String [] rowDDZ1T1raz = {"BH-10","IDC-10MS","ГРПМШ2-30ГО2-В","OHП-ВГ-1-18","ГРПМ2-46ШО2-В",
+    public static final String [] rowDZ1T1raz = {"BH-10","IDC-10MS","ГРПМШ2-30ГО2-В","OHП-ВГ-1-18","ГРПМ2-46ШО2-В",
             "СНП58-16/94х9В-20","СНО63-32/95х9В-20","ППИС (РШ2Н-2)","ОНП-ВГ-1-32/46х11-В21","СНО53-60/93×9Р-23",
             "СНП59-32/95×11Р-20-2","ГРПМ1-31ШП2-К","BH2-34 (DS1014-34, IDC2-34MS)","BH-24 (DS1013-24S, IDC-24MS)","СНО48-108/62х40В-6М-В"};
 
