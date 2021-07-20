@@ -6,7 +6,6 @@ public class T1Random {
     public static String gen(){
         final Random random = new Random();
         int var;
-        int helper;
         String varNum="";
 
         varNum = varNum.concat(String.valueOf(random.nextInt(15)+1)+"-");//1 параметр 1 таблица
@@ -42,7 +41,9 @@ public class T1Random {
 
         varNum = varNum.concat(String.valueOf(random.nextInt(10))+"-");//3 параметр 2 таблица
 
-        varNum = varNum.concat(String.valueOf(random.nextInt(11)+10)+"-");//4 параметр 2 таблица
+        var = random.nextInt(11) + 10;
+
+        varNum = varNum.concat(String.valueOf(var - (var % 2))+"-");//4 параметр 2 таблица
 
         varNum = varNum.concat(String.valueOf(random.nextInt(6)+5)+"-");//5 параметр 2 таблица
 

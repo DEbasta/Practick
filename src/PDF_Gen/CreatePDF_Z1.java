@@ -79,11 +79,13 @@ public class CreatePDF_Z1 extends AbstractCreatePDF{
         document.add(tz2);
         document.add(emptyParagpaph);
         document.add(table1Name);
+        document.add(emptyParagpaph);
         document.add(table1);
         document.add(emptyParagpaph);
         document.add(tz3);
         document.add(emptyParagpaph);
         document.add(table2Name);
+        document.add(emptyParagpaph);
         document.add(table2);
 
 

@@ -60,7 +60,11 @@ public class Constants {
 
     public static final int twoColumns = 2;
 
+    public static final int threeColumns = 3;
+
     public static final int fourColumns = 4;
+
+    public static final int fiveColumns = 5;
 
     public static final int sixColumns = 6;
 
@@ -70,11 +74,15 @@ public class Constants {
 
     public static final int decodedNumberDZ1 = 38;
 
+    public static final int decodedNumberDZ2 = 82;
+
     public static final int decodedNumberDZ3 = 52;
 
     public static final String DZ2ImagePathEskiz = "Images/DZ2T2EskizImage";
 
     public static final String DZ2ImagePathFormula = "Images/DZ2T2FormulaImage";
+
+    public static final String DZ2ImagePathNote = "Images/DZ2T2NoteImage.png";
 
     public static final String DZ3ImagePath = "Images/DZ3Image";
 
@@ -127,10 +135,9 @@ public class Constants {
             "заданных наименьшем диаметре отверстия, классе точности и типе разъёма (данные выбрать из\n" +
             "таблицы 4 согласно полученному варианту). Рассчитать:\n" +
             "\uF0B7\n" +
-            " отношение заданного диаметра металлизированного отверстия к толщине ПП;\n" +
+            "         1)отношение заданного диаметра металлизированного отверстия к толщине ПП;\n" +
             "\uF0B7\n" +
-            " отношение диаметра металлизированного отверстия по заданному классу точности в\n" +
-            "соответствии с ГОСТ к толщине ПП.\n" +
+            "         2)отношение диаметра металлизированного отверстия по заданному классу точности в соответствии с ГОСТ к толщине ПП.\n" +
             "Оценить возможность пайки разъёма. Сделать выводы.\n";
 
     public static final String tz4DZ2 = "Задача No4. Определить число слоев и толщину многослойной печатной платы (МПП). Данные\n" +
@@ -163,7 +170,7 @@ public class Constants {
 
     public static final String[] headersDZ2T6 = {"Масса ПП, гр", "Масса ЭК, гр", "Размеры ПП, мм", "Материал ПП", "Длительность удара, мс", "Ускорение м/с^2", "Частота ударов, Гц", "Частота собственных колебаний платы f0, Гц"};
 
-
+    public static final String [] rowDZ2dimensions = {"40", "50", "60", "75", "80", "90", "100", "110", "120", "130", "140", "150", "160", "180", "200"};
 
 
     public static final String tz1DZ3 = "Задача No3. Провести расчёт надёжности функциональной ячейки (ФЯ) и сделать вывод, " +

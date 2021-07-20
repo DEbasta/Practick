@@ -55,6 +55,7 @@ public class FirstHomeTaskView extends JFrame{
                     }
                     else {
                         String decoded_s = (new BigInteger(numberOfGenVarField.getText(), Constants.encodingRadix)).toString();//создание варианта при заданном значении варианта
+                        decoded_s = decoded_s.substring(2,decoded_s.length());
                         if (decoded_s.length() == Constants.decodedNumberDZ1){
                             try {
                                 createPDFZ1 = new CreatePDF_Z1(decoded_s,numberOfGenVarField.getText());

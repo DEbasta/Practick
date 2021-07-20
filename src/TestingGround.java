@@ -92,21 +92,23 @@ public class TestingGround {
 
         // DECODE the string
 
-        String decoded = (new BigInteger(encoded, 36)).toString();
+        String decoded = (new BigInteger("o3lj49zhd0yu4w0tmdntxk5l", 36)).toString();
         System.out.println(decoded);
         System.out.println(decoded.length());
-        for (int i = 0; i < 10; ++i){
-            System.out.println(i);
-        }
+        String s1= "1234";
+        s1= s1.substring(2,s1.length());
+        System.out.println(s1);
 
-        String s1 = "1234567890";
-//        s1 = s1.substring(1,s1.length());
-        int i = 0;
-        while (s1.length()>0){
-            String s2 = s1.substring(0,2);
-            s1 = s1.substring(2,s1.length());
-            System.out.println(s2);
-        }
+
+
+//        String s1 = "1234567890";
+////        s1 = s1.substring(1,s1.length());
+//        int i = 0;
+//        while (s1.length()>0){
+//            String s2 = s1.substring(0,2);
+//            s1 = s1.substring(2,s1.length());
+//            System.out.println(s2);
+//        }
 
     }
 }
