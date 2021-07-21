@@ -49,7 +49,7 @@ public class T2Random {
 
         varNum = varNum.concat(String.valueOf(random.nextInt(5)+1) + "-");//2 параметр 4 таблица 14
 
-        varNum = varNum.concat(String.valueOf(random.nextInt(5)) + "-");//3 параметр 4 таблица 15
+        varNum = varNum.concat(String.valueOf(random.nextInt(4)) + "-");//3 параметр 4 таблица 15
 
 
 

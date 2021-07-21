@@ -38,9 +38,13 @@ public class CreatePDF_Z2 extends AbstractCreatePDF{
 
     }
     private void change(){//замена случайного числа, на соответствующую строку
-        int number = Integer.parseInt(array[0]);
-//        array[0] = array[0].concat(Constants.rowDZ3T4Zeroes);
-        number = Integer.parseInt(array[8]);
+        array[0] = Constants.rowDZ2ppMaterial[Integer.parseInt(array[0])];
+        array[1] = Constants.rowDZ2vibration[Integer.parseInt(array[1])];
+        array[7] = Constants.rowDZ2ppMaterial[Integer.parseInt(array[7])];
+        array[8] = Constants.rowDZ2vibration[Integer.parseInt(array[8])];
+        array[15] = Constants.rowDZ2razType[Integer.parseInt(array[15])];
+        array[23] = Constants.rowDZ2mppMaterial[Integer.parseInt(array[23])];
+        array[32] = Constants.rowDZ2T6ppMaterial[Integer.parseInt(array[32])];
         array[10] = Constants.rowDZ2dimensions[Integer.parseInt(array[10])];
         array[11] = Constants.rowDZ2dimensions[Integer.parseInt(array[11])];
         array[16] = Constants.rowDZ2dimensions[Integer.parseInt(array[16])];

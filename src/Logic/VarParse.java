@@ -149,7 +149,7 @@ public class VarParse {
         mass[10] = array[18];
         mass[11] = array[19].concat(commaSplit + array[20]);
         mass[12] = array[21].concat(commaSplit + array[22]);
-        mass[13] = array[23].concat(array[24]);
+        mass[13] = array[23].concat(commaSplit + array[24]);
         mass[14] = array[25];
 
 

@@ -32,12 +32,9 @@ public class CreatePDF_Z1 extends AbstractCreatePDF{
         change();
     }
     private void change(){
-        int number = Integer.parseInt(array[0]);
-        array[0] = Constants.rowDZ1T1raz[number-1];
-        number = Integer.parseInt(array[2]);
-        array[2] = Constants.rowDZ1T1ms[number-1];
-        number = Integer.parseInt(array[11]);
-        array[11] = Constants.rowDZ1T2blockConstr[number];
+        array[0] = Constants.rowDZ1T1raz[Integer.parseInt(array[0])];
+        array[2] = Constants.rowDZ1T1ms[Integer.parseInt(array[2])];
+        array[11] = Constants.rowDZ1T2blockConstr[Integer.parseInt(array[11])];
     }
     public void create() throws IOException, DocumentException, URISyntaxException {
         Document document = new Document();

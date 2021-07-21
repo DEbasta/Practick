@@ -8,11 +8,11 @@ public class T1Random {
         int var;
         String varNum="";
 
-        varNum = varNum.concat(String.valueOf(random.nextInt(15)+1)+"-");//1 параметр 1 таблица
+        varNum = varNum.concat(String.valueOf(random.nextInt(15))+"-");//1 параметр 1 таблица
 
         varNum = varNum.concat(String.valueOf(random.nextInt(5)+1)+"-");//2 параметр 1 таблица
 
-        varNum = varNum.concat(String.valueOf(random.nextInt(15)+1)+"-");//3 параметр 1 таблица
+        varNum = varNum.concat(String.valueOf(random.nextInt(15))+"-");//3 параметр 1 таблица
 
         varNum = varNum.concat(String.valueOf(random.nextInt(17)+4)+"-");//4 параметр 1 таблица
 

@@ -12,7 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import static Constants.Constants.rowDZ3T4UslExpl;
+import static Constants.Constants.*;
 
 public class CreatePDF_Z3 extends  AbstractCreatePDF{
     String var;
@@ -40,10 +40,18 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
         change();
     }
     private void change(){//замена случайного числа, на соответствующую строку
-        int number = Integer.parseInt(array[0]);
+
         array[0] = array[0].concat(Constants.rowDZ3T4Zeroes);
-        number = Integer.parseInt(array[8]);
-        array[8] = rowDZ3T4UslExpl[number-1];
+        array[1] = rowDZ3T4schemeSeries[Integer.parseInt(array[1])];
+        array[5] = rowDZ3T4raz[Integer.parseInt(array[5])];
+        array[8] = rowDZ3T4UslExpl[Integer.parseInt(array[8])];
+        array[11] = rowDZ3T4condens[Integer.parseInt(array[11])];
+        array[13] = rowDZ3T4connection[Integer.parseInt(array[13])];
+        array[19] = rowDZ3T4diod[Integer.parseInt(array[19])];
+        array[21] = rowDZ3T4switcher[Integer.parseInt(array[21])];
+        array[23] = rowDZ3T4resistor[Integer.parseInt(array[23])];
+        array[25] = rowDZ3T4relay[Integer.parseInt(array[25])];
+
     }
     public void create() throws IOException, DocumentException, URISyntaxException {
         Document document = new Document();
