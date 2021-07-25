@@ -38,6 +38,7 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
         if (key.equals(Constants.nothingString))
             this.key = VarParse.encode(array);
         change();
+        System.out.println(var);
     }
     private void change(){//замена случайного числа, на соответствующую строку
 
@@ -64,6 +65,8 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
         finalArray = VarParse.specialParseDZ3(array,numberOfFinalParam);
 
         document.open();
+
+        Paragraph DZTitle = new Paragraph( Constants.DZ3title, new Font(times,fontSize14));
 
         Paragraph varStringPDF=new Paragraph( Constants.varID + key,new Font(times,fontSize14));
         // строки ТЗ для ДЗ
@@ -141,7 +144,8 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
 
 
 
-
+        document.add(DZTitle);
+        document.add(emptyParagpaph);
         document.add(varStringPDF);
         document.add(emptyParagpaph);
         document.add(tz1);

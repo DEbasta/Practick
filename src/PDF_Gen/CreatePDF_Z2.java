@@ -63,6 +63,8 @@ public class CreatePDF_Z2 extends AbstractCreatePDF{
 
         finalArray = VarParse.specialParseDZ2(array, numberOfFinalParam);
 
+        Paragraph DZTitle = new Paragraph( Constants.DZ2title,new Font(times,fontSize14));
+
         Paragraph varStringPDF=new Paragraph( Constants.varID + key,new Font(times,fontSize14));
 
         Paragraph tz1 = new Paragraph(Constants.tz1DZ2, new Font(times,fontSize11));
@@ -118,6 +120,9 @@ public class CreatePDF_Z2 extends AbstractCreatePDF{
 
         document.open();
 
+
+        document.add(DZTitle);
+        document.add(emptyParagpaph);
         document.add(varStringPDF);
         document.add(emptyParagpaph);
         document.add(tz1);

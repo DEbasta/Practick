@@ -53,8 +53,7 @@ public class ThirdHomeTaskView extends JFrame{
                     }
                 }
                 else {
-                    String decoded_s = (new BigInteger(numberOfGenVarField.getText(), Constants.encodingRadix)).toString();//создание варианта при заданном значении варианта
-                    decoded_s = decoded_s.substring(2,decoded_s.length());
+                    String decoded_s = VarParse.decode(numberOfGenVarField.getText());//создание варианта при заданном значении варианта
                     if (decoded_s.length() == Constants.decodedNumberDZ3){
                         try {
                             createPDFZ3 = new CreatePDF_Z3(decoded_s,numberOfGenVarField.getText());

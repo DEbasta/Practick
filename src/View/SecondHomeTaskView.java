@@ -33,7 +33,6 @@ public class SecondHomeTaskView extends JFrame{
         });
 
 
-
         // Кнопки для создания диалоговых окон
         JButton button1 = new JButton(Constants.secondViewButton);//создание кнопки
         button1.addActionListener(new ActionListener() {
@@ -54,7 +53,7 @@ public class SecondHomeTaskView extends JFrame{
                         }
                     }
                     else {
-                        String decoded_s = (new BigInteger(numberOfGenVarField.getText(), Constants.encodingRadix)).toString();//создание варианта при заданном значении варианта
+                        String decoded_s = VarParse.decode(numberOfGenVarField.getText());//создание варианта при заданном значении варианта
                         decoded_s = decoded_s.substring(2,decoded_s.length());
                         if (decoded_s.length() == Constants.decodedNumberDZ2){
                             try {

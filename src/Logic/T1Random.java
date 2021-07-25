@@ -3,10 +3,13 @@ package Logic;
 import java.util.Random;
 
 public class T1Random {
-    public static String gen(){
-        final Random random = new Random();
-        int var;
+    final static Random random = new Random();
+    static int var;
+
+    public static String gen1() {
         String varNum="";
+
+        varNum = varNum.concat("11-");//спецключ
 
         varNum = varNum.concat(String.valueOf(random.nextInt(15))+"-");//1 параметр 1 таблица
 
@@ -24,16 +27,20 @@ public class T1Random {
 
         varNum = varNum.concat(String.valueOf(random.nextInt(4)*25)+"-");//8 параметр 1 таблица
 
-        varNum = varNum.concat(String.valueOf(random.nextInt(11))+"-");//9 параметр 1 таблица
+        varNum = varNum.concat(String.valueOf(random.nextInt(11) + 1)+"-");//9 параметр 1 таблица
 
         var = random.nextInt(2)+1;
         if (var == 1)
-            varNum = varNum.concat(1+"-"+5+"-");//10 и 11 параметры 1 таблица
+            varNum = varNum.concat(1+"-"+5);//10 и 11 параметры 1 таблица
         else
-            varNum = varNum.concat(2+"-"+0+"-");//10 и 11 параметры 1 таблица
+            varNum = varNum.concat(2+"-"+0);//10 и 11 параметры 1 таблица
+        return varNum;
+    }
 
+    public static String gen2() {
+        String varNum="";
 
-
+        varNum = varNum.concat("22-");//спецключ
 
         varNum = varNum.concat(String.valueOf(random.nextInt(2))+"-");//1 параметр 2 таблица
 
@@ -53,6 +60,14 @@ public class T1Random {
 
         varNum = varNum.concat("5");//8 параметр 2 таблица
 
+        return varNum;
+
+    }
+
+    public static String gen(){
+        String varNum="";
+
+        varNum = varNum.concat(gen1() + "-" + varNum.concat(gen2()));
 
 
 

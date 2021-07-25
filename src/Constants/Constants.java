@@ -48,6 +48,12 @@ public class Constants {
 
     public static final String documentFormat_png = ".png";
 
+    public static final String DZ1title = "Домашняя работа №1";
+
+    public static final String DZ2title = "Домашняя работа №2";
+
+    public static final String DZ3title = "Домашняя работа №3";
+
     public static final String documentNameDZ1 = "Variant_DZ1_";
 
     public static final String documentNameDZ2 = "Variant_DZ2_";
@@ -72,7 +78,11 @@ public class Constants {
 
     public static final int eightColumns = 8;
 
-    public static final int decodedNumberDZ1 = 38;
+    public static final int decodedNumberDZ1 = 42;
+
+    public static final int decodedNumberDZ1T1 = 24;
+
+    public static final int decodedNumberDZ1T2 = 18;
 
     public static final int decodedNumberDZ2 = 82;
 

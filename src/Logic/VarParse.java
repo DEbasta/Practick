@@ -45,44 +45,80 @@ public class VarParse {
             }
             return vect;
         }
+    }
 
+    public static String remakeVar(String var){
+        String s = "";
+        while (var.length()>0){
+            s = s.concat(var.substring(0,2) + "-");
+            var = var.substring(2, var.length());
+        }
+        return s;
+    }
+
+    public static String decode(String input){
+        return (new BigInteger(input, Constants.encodingRadix)).toString();
     }
 
     public static String encode(String[] mass){
-        String fix = "11";
         StringBuilder b = new StringBuilder();
-        b.append(fix);
         for (String i:mass)
             b.append(i);
         return (new BigInteger(b.toString())).toString(Constants.encodingRadix);
     }
 
-    public static String[] specialParseDZ1(String[] array, int nuberOfFinalParam){
+    public static String[] specialParseDZ1(String[] array, int nuberOfFinalParam, int changeType){
         String[] mass;
         for (int i = 0; i<array.length;++i){
             if (array[i].charAt(0) == zeroChar)
                 array[i] = array[i].substring(1,array[i].length());
         }
         mass = new String[nuberOfFinalParam];
-        mass[0] = array[0];
-        mass[1] = array[1];
-        mass[2] = array[2];
-        mass[3] = array[3];
-        mass[4] = array[4].concat(comma + array[5]);
-        mass[5] = array[6].concat(comma + array[7]);
-        mass[6] = array[8];
-        mass[7] = array[9].concat(comma + array[10]);
 
+        switch (changeType){
+            case 1: {
+                mass[0] = array[1];//first tab
+                mass[1] = array[2];
+                mass[2] = array[3];
+                mass[3] = array[4];
+                mass[4] = array[5].concat(comma + array[6]);
+                mass[5] = array[7].concat(comma + array[8]);
+                mass[6] = array[9];
+                mass[7] = array[10].concat(comma + array[11]);
+            }
+                break;
+            case 2: {
+                mass[0] = array[1];//second tab
+                mass[1] = array[2].concat(comma + array[3]);
+                mass[2] = array[4];
+                mass[3] = array[5];
+                mass[4] = array[6];
+                mass[5] = array[7].concat(comma + array[8]);
+            }
+                break;
+            case 3: {
+                mass[0] = array[1];//first tab
+                mass[1] = array[2];
+                mass[2] = array[3];
+                mass[3] = array[4];
+                mass[4] = array[5].concat(comma + array[6]);
+                mass[5] = array[7].concat(comma + array[8]);
+                mass[6] = array[9];
+                mass[7] = array[10].concat(comma + array[11]);
 
-        mass[8] = array[11];
-        mass[9] = array[12].concat(comma + array[13]);
-        mass[10] = array[14];
-        mass[11] = array[15];
-        mass[12] = array[16];
-        mass[13] = array[17].concat(comma + array[18]);
-
+                mass[8] = array[13];//second tab
+                mass[9] = array[14].concat(comma + array[15]);
+                mass[10] = array[16];
+                mass[11] = array[17];
+                mass[12] = array[18];
+                mass[13] = array[19].concat(comma + array[20]);
+            }
+                break;
+        }
         return mass;
     }
+
+
 
     public static String[] specialParseDZ2(String[] array, int nuberOfFinalParam){
         String[] mass;
@@ -91,7 +127,7 @@ public class VarParse {
             if (array[i].charAt(0) == zeroChar)
                 array[i] = array[i].substring(1,array[i].length());
         }
-        mass[0] = array[0];
+        mass[0] = array[0];//first tab
         mass[1] = array[1];
         mass[2] = array[2];
         mass[3] = array[3].concat(comma + array[4]);//first tab
