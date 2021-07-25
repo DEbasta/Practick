@@ -20,8 +20,8 @@ public class FirstHomeTaskView extends JFrame{
         JTextField numberOfGenVarField = new JTextField(Constants.emptyFieldValue);
         numberOfGenVarField.setPreferredSize(new Dimension(200,20));
 
-        JCheckBox checkBoxFirstSecondTask = new JCheckBox("Генерировать первое, второе задания");
-        JCheckBox checkBoxThirdTask = new JCheckBox("Генерировать третье задание");
+        JCheckBox checkBoxFirstSecondTask = new JCheckBox(Constants.checkBox12);
+        JCheckBox checkBoxThirdTask = new JCheckBox(Constants.checkBox3);
 
 
         numberOfGenVarField.addFocusListener(new FocusListener() {

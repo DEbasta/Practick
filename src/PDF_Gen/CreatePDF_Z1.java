@@ -162,6 +162,7 @@ public class CreatePDF_Z1 extends AbstractCreatePDF{
         document.add(varStringPDF);
         document.add(emptyParagpaph);
 
+
         switch (changeType){
             case 1: {
                 PdfPTable table1 = new PdfPTable(Constants.eightColumns);
@@ -214,6 +215,19 @@ public class CreatePDF_Z1 extends AbstractCreatePDF{
             }
                 break;
         }
+
+        PdfPTable noteTableHeader = new PdfPTable(Constants.singleColumn);
+        addSingleValueToTable(noteTableHeader,Constants.note, fontSize14);
+        PdfPTable noteTable = new PdfPTable(Constants.twoColumns);
+        addTableHeader(noteTable, Constants.headersNote, fontSize11);
+        for (int i = 0; i < Constants.noteRows; ++i){
+            String [] row = {Constants.rowSpecSymbols[i], Constants.rowSpecDiscription[i]};
+            addRows(noteTable,row, fontSize11,0, 2 );
+        }
+
+        document.add(emptyParagpaph);
+        document.add(noteTableHeader);
+        document.add(noteTable);
 
 
 

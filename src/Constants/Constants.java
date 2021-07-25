@@ -84,9 +84,9 @@ public class Constants {
 
     public static final int decodedNumberDZ1T2 = 18;
 
-    public static final int decodedNumberDZ2 = 82;
+    public static final int decodedNumberDZ2 = 92;
 
-    public static final int decodedNumberDZ3 = 52;
+    public static final int decodedNumberDZ3 = 54;
 
     public static final String DZ2ImagePathEskiz = "Images/DZ2T2EskizImage";
 
@@ -95,6 +95,29 @@ public class Constants {
     public static final String DZ2ImagePathNote = "Images/DZ2T2NoteImage.png";
 
     public static final String DZ3ImagePath = "Images/DZ3Image";
+
+    public static final String checkBox12 = "Генерировать первое, второе задания";
+
+    public static final String checkBox1 = "Генерировать первое задание";
+
+    public static final String checkBox2 = "Генерировать второе задание";
+
+    public static final String checkBox3 = "Генерировать третье задание";
+
+    public static final String checkBox4 = "Генерировать четвёртое задание";
+
+    public static final String checkBox5 = "Генерировать пятое задание";
+
+    public static final String note = "Памятка";
+
+    public static final String [] headersNote = {"Используемый спец. символ", "Описание"};
+
+    public static final String [] rowSpecSymbols = {"ALPHA", "LAMBDA", "DELTA", "x^2"};
+
+    public static final String [] rowSpecDiscription = {"Греч. символ альфа", "Греч. символ лямбда", "Греч. символ дельта", "икс в степени 2"};
+
+    public static final int noteRows = 4;
+
 
 
 
@@ -118,7 +141,7 @@ public class Constants {
 
     public static final String[] headersDZ1T1 = {"Тип корпуса Разъёма","Кол-во","Тип корпуса МС","Кол-во","Коэффициент дезинтеграции","Зазор между ЭК,мм","Расстояние по торцу,мм","dпл,мм"};
 
-    public static final String[] headersDZ1T2 = {"Тип конструкции блока", "Толщина платы dпл, мм", "Ширина панели HК, мм", "Зазор между ФЯ Δhя , мм", "Кол-во ФЯ в блоке nфя, шт.", "Высота пайки Hm, мм"};
+    public static final String[] headersDZ1T2 = {"Тип конструкции блока", "Толщина платы dпл, мм", "Ширина панели HК, мм", "Зазор между ФЯ DELTAhя , мм", "Кол-во ФЯ в блоке nфя, шт.", "Высота пайки Hm, мм"};
 
     public static final String [] rowDZ1T1raz = {"BH-10","IDC-10MS","ГРПМШ2-30ГО2-В","OHП-ВГ-1-18","ГРПМ2-46ШО2-В",
             "СНП58-16/94х9В-20","СНО63-32/95х9В-20","ППИС (РШ2Н-2)","ОНП-ВГ-1-32/46х11-В21","СНО53-60/93×9Р-23",
@@ -133,7 +156,7 @@ public class Constants {
 
     public static final String tz1DZ2 = "Задача No1. Провести расчёт печатной платы на действие вибрации и сделать выводы по\n" +
             "полученным результатам. В качестве размеров ПП взять размеры, полученные при решении\n" +
-            "задачи No1 задания No1. Диапазон действующих вибраций Δf взять из таблицы 1 согласно\n" +
+            "задачи No1 задания No1. Диапазон действующих вибраций DELTAf взять из таблицы 1 согласно\n" +
             "полученному варианту. Способ закрепления платы взять из таблицы 2 согласно полученному\n" +
             "варианту. Виброускорение принять за a0=19,6 м/с2.\n";
 
@@ -168,11 +191,11 @@ public class Constants {
 
     public static final String table6DZ2Name = "Таблица 6. Условия задачи No5";
 
-    public static final String[] headersDZ2T1 = {"Материал ПП", "Диапазон вибраций Δf, Гц", "Способ закрепления платы", "Толщина платы, мм"};
+    public static final String[] headersDZ2T1 = {"Материал ПП", "Диапазон вибраций DELTAf, Гц", "Способ закрепления платы", "Толщина платы, мм"};
 
     public static final String[] headersDZ2T2 = {"Эскиз закрепления платы", "Формула для определения Ка."};
 
-    public static final String[] headersDZ2T3 = {"Материал ПП", "Диапазон вибраций Δf, Гц", "Способ закрепления платы", "Размеры плтаы, мм", "Масса ЭК,гр"};
+    public static final String[] headersDZ2T3 = {"Материал ПП", "Диапазон вибраций DELTAf, Гц", "Способ закрепления платы", "Размеры плтаы, мм", "Масса ЭК,гр"};
 
     public static final String[] headersDZ2T4 = {"Наименьший диаметр отверстия, мм", "Класс точности", "Тип разъёма"};
 
@@ -206,7 +229,7 @@ public class Constants {
             "удовлетворяет ли ФЯ требованиям технического задания.\n" +
             "        В табл. 4 приведены варианты задания, различные по ожидаемому сроку наработки на отказ\n" +
             "Tср, часов, номиналу и количеству элементов ФЯ и условиям эксплуатации.\n" +
-            "        На рис. рис. 4-7 приведены графики для расчёта поправочного коэффициента αi(T, kн) в\n" +
+            "        На рис. рис. 4-7 приведены графики для расчёта поправочного коэффициента ALPHAi(T, kн) в\n" +
             "зависимости от температуры T и коэффициента нагрузки kн. Напоминание: при уже известной форме\n" +
             "графического отображения функции её можно (и нужно) использовать для нахождения ординаты\n" +
             "точки по известной абсциссе и наоборот.\n";
@@ -253,7 +276,7 @@ public class Constants {
 
     public static final String headerSingleDZ3T5_3 = "Значения поправочных коэффициентов, учитывающих атмосферное давление (высоту над уровнем моря)";
 
-    public static final String[] headersDZ3T6 = {"Элемент", "Обозначение", "λ 0t· 10^(–6), 1/ч", "Кол-во, шт."};
+    public static final String[] headersDZ3T6 = {"Элемент", "Обозначение", "LAMBDA 0t· 10^(–6), 1/ч", "Кол-во, шт."};
 
 
     public static final String rowDZ3T4Zeroes = " 000";
@@ -288,7 +311,7 @@ public class Constants {
 
     public static final String[] rowDZ3T6Elem = {"Резисторы: C2-33H-0,25; C2-33H-0,5; C2-33H-2", "Диоды: 2Д522Б; 2Д106А", "Конденсаторы: К10-17", "Реле РЭС80", "Печатная плата", "Паяное соединение", "Микросхемы", "Соединитель"};
 
-    public static final String[] rowDZ3T6Obozm = {"λ0.R1; λ0.R2; λ0.R3", "λ0.vd1; λ0.vd2", "λ0.ос1", "λ0.ок1", "λ0.пп", "λ0.ом", "λ0.имс", "λ0.соед"};
+    public static final String[] rowDZ3T6Obozm = {"LAMBDA0.R1; LAMBDA0.R2; LAMBDA0.R3", "LAMBDA0.vd1; LAMBDA0.vd2", "LAMBDA0.ос1", "LAMBDA0.ок1", "LAMBDA0.пп", "LAMBDA0.ом", "LAMBDA0.имс", "LAMBDA0.соед"};
 
     public static final String[] rowDZ3T6Lambd = {"0,987", "0,2", "0,04", "2", "0,7", "0,01", "0,013", "0,062x96"};
 

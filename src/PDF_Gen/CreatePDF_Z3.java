@@ -18,7 +18,7 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
     String var;
     String key;
     String[] array;
-    private final int keysAmount = 26;
+    private final int keysAmount = 27;
     private final int numberOfFinalParam = 15;
     private final int rowsTable5_2amount = 3;
     private final int rowsTable5_3amount = 4;
@@ -38,7 +38,6 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
         if (key.equals(Constants.nothingString))
             this.key = VarParse.encode(array);
         change();
-        System.out.println(var);
     }
     private void change(){//замена случайного числа, на соответствующую строку
 
@@ -189,6 +188,21 @@ public class CreatePDF_Z3 extends  AbstractCreatePDF{
         document.add(emptyParagpaph);
         document.add(table6);
 
+
+
+
+        PdfPTable noteTableHeader = new PdfPTable(Constants.singleColumn);
+        addSingleValueToTable(noteTableHeader,Constants.note, fontSize14);
+        PdfPTable noteTable = new PdfPTable(Constants.twoColumns);
+        addTableHeader(noteTable, Constants.headersNote, fontSize11);
+        for (int i = 0; i < Constants.noteRows; ++i){
+            String [] row = {Constants.rowSpecSymbols[i], Constants.rowSpecDiscription[i]};
+            addRows(noteTable,row, fontSize11,0, 2 );
+        }
+
+        document.add(emptyParagpaph);
+        document.add(noteTableHeader);
+        document.add(noteTable);
 
 
 

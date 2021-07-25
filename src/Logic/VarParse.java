@@ -127,42 +127,62 @@ public class VarParse {
             if (array[i].charAt(0) == zeroChar)
                 array[i] = array[i].substring(1,array[i].length());
         }
-        mass[0] = array[0];//first tab
-        mass[1] = array[1];
-        mass[2] = array[2];
-        mass[3] = array[3].concat(comma + array[4]);//first tab
-        mass[4] = array[5];
-        mass[5] = array[6];//second tab
-        mass[6] = array[7];
-        mass[7] = array[8];
-        mass[8] = array[9];
-        mass[9] = array[10].concat(ex + array[11]);
-        mass[10] = array[12];//third tab
-        mass[11] = (zero+comma).concat(array[13]);
-        mass[12] = array[14];
-        mass[13] = array[15];//fourth tab
-        mass[14] = array[16].concat(ex + array[17]);
-        mass[15] = array[18];
-        mass[16] = array[19];
-        mass[17] = (zero+comma+zero).concat(array[20]);
-        if (array[21].equals("5"))
-            mass[18] = one.concat(zero+array[21]);
-        else
-            mass[18] = one.concat(array[21]);
-        mass[19] = array[22];
-        mass[20] = array[23];
-        mass[21] = (zero + comma).concat(array[24].concat(array[25]));//fifth tab
-        mass[22] = array[26].concat(array[27]);
-        mass[23] = array[28];
-        mass[24] = array[29].concat(ex + array[30]);
-        mass[25] = array[31];
-        mass[26] = array[32].concat(comma + array[33]);
-        mass[27] = array[34].concat(array[35].concat(comma + array[36]));
-        mass[28] = array[37].concat(array[38]);
-        mass[29] = array[39].concat(array[40]);
+
+        if (array[0].equals("11")) {
+            mass[0] = array[5];//first tab
+            mass[1] = array[6];
+            mass[2] = array[7];
+            if (array[9].equals(""))
+                mass[3] = array[8];//first tab
+            else
+                mass[3] = array[8].concat(comma + array[9]);//first tab
+            mass[4] = array[10];
+            mass[5] = array[11];
+        }
+
+        if (array[1].equals("22")){
+            mass[6] = array[12];//second tab
+            mass[7] = array[13];
+            mass[8] = array[14];
+            mass[9] = array[15].concat(ex + array[16]);
+            mass[10] = array[17];
+        }
+
+        if (array[2].equals("33")){
+            mass[11] = (zero+comma).concat(array[18]);//third tab
+            mass[12] = array[19];
+            mass[13] = array[20];
+        }
+
+        if (array[3].equals("44")){
+            mass[14] = array[21].concat(ex + array[22]);//fourth tab
+            mass[15] = array[23];
+            mass[16] = array[24];
+            mass[17] = (zero+comma+zero).concat(array[25]);
+            if (array[26].equals("5"))
+                mass[18] = one.concat(zero+array[26]);
+            else
+                mass[18] = one.concat(array[26]);
+            mass[19] = array[27];
+            mass[20] = array[28];
+            mass[21] = (zero + comma).concat(array[29].concat(array[30]));
+        }
+
+        if (array[4].equals("55")){
+            mass[22] = array[31].concat(array[32]);//fifth tab
+            mass[23] = array[33];
+            mass[24] = array[34].concat(ex + array[35]);
+            mass[25] = array[36];
+            mass[26] = array[37].concat(comma + array[38]);
+            mass[27] = array[39].concat(array[40].concat(comma + array[41]));
+            mass[28] = array[42].concat(array[43]);
+            mass[29] = array[44].concat(array[45]);
+        }
 
         return mass;
     }
+
+
 
     public static String[] specialParseDZ3(String[] array, int nuberOfFinalParam){
         String[] mass;
@@ -186,7 +206,7 @@ public class VarParse {
         mass[11] = array[19].concat(commaSplit + array[20]);
         mass[12] = array[21].concat(commaSplit + array[22]);
         mass[13] = array[23].concat(commaSplit + array[24]);
-        mass[14] = array[25];
+        mass[14] = array[25].concat(commaSplit + array[26]);
 
 
         return mass;
