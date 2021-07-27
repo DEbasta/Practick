@@ -96,17 +96,17 @@ public class Constants {
 
     public static final String DZ3ImagePath = "Images/DZ3Image";
 
-    public static final String checkBox12 = "Генерировать первое, второе задания";
+    public static final String checkBox12 = "Генерировать первую, вторую задачи";
 
-    public static final String checkBox1 = "Генерировать первое задание";
+    public static final String checkBox1 = "Генерировать первую задачу";
 
-    public static final String checkBox2 = "Генерировать второе задание";
+    public static final String checkBox2 = "Генерировать вторую задачу";
 
-    public static final String checkBox3 = "Генерировать третье задание";
+    public static final String checkBox3 = "Генерировать третью задачу";
 
-    public static final String checkBox4 = "Генерировать четвёртое задание";
+    public static final String checkBox4 = "Генерировать четвёртую задачу";
 
-    public static final String checkBox5 = "Генерировать пятое задание";
+    public static final String checkBox5 = "Генерировать пятую задачу";
 
     public static final String note = "Памятка";
 
