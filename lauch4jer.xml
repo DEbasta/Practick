@@ -15,7 +15,7 @@
   <manifest></manifest>
   <icon>C:\Users\denya\IdeaProjects\Practick\icon.ico</icon>
   <jre>
-    <path>%Path%</path>
+    <path>%Path%, %JAVA_HOME%</path>
     <bundledJre64Bit>false</bundledJre64Bit>
     <bundledJreAsFallback>false</bundledJreAsFallback>
     <minVersion>1.8.0</minVersion>
