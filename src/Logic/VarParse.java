@@ -12,7 +12,7 @@ public class VarParse {
     private static final String dash = "-";
     private static final String commaSplit = ", ";
     private static final String comma = ",";
-    private final static String ex = "x";
+    private static final String ex = "x";
 
 
 

@@ -17,7 +17,7 @@ public class CreatePDF_Z1 extends AbstractCreatePDF{
     String[] array;
     private boolean flag12, flag3;
     private int numberOfFinalParam;
-    private final int keysAmount = 21; //raised ricently
+    private final int keysAmount = 21;
     private int changeType;
 
     public CreatePDF_Z1(String var, String key,boolean flag12, boolean flag3) throws DocumentException, IOException, URISyntaxException {
