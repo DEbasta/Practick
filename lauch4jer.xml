@@ -15,7 +15,8 @@
   <manifest></manifest>
   <icon>C:\Users\denya\IdeaProjects\Practick\icon.ico</icon>
   <jre>
-    <path>C:\Program Files (x86)\Java\jdk-16.0.2\java.exe</path>
+    <path>bundled JRE path (%VAR%)</path>
+    <jdkPreference>jreOnly|preferJre|preferJdk|jdkOnly</jdkPreference>
     <bundledJre64Bit>true</bundledJre64Bit>
     <bundledJreAsFallback>false</bundledJreAsFallback>
     <minVersion>1.8</minVersion>
