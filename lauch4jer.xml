@@ -15,7 +15,7 @@
   <manifest></manifest>
   <icon>C:\Users\denya\IdeaProjects\Practick\icon.ico</icon>
   <jre>
-    <path>C:\Program Files\Java\jre1.8.0_301\bin\java.exe</path>
+    <path>C:\Program Files (x86)\Java\jre1.8.0_301\bin\java.exe</path>
     <bundledJre64Bit>false</bundledJre64Bit>
     <bundledJreAsFallback>false</bundledJreAsFallback>
     <minVersion>1.8.0_301</minVersion>
