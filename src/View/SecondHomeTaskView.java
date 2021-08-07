@@ -24,6 +24,12 @@ public class SecondHomeTaskView extends JFrame{
         JCheckBox checkBoxFourthTask = new JCheckBox(Constants.checkBox4);
         JCheckBox checkBoxFifthTask = new JCheckBox(Constants.checkBox5);
 
+        JTextField chooseIf1 = new JTextField(Constants.chooseIf1);
+        chooseIf1.setEditable(false);
+
+        JTextField chooseIf2 = new JTextField(Constants.chooseIf2);
+        chooseIf2.setEditable(false);
+
 
 
         numberOfGenVarField.addFocusListener(new FocusListener() {
@@ -126,6 +132,8 @@ public class SecondHomeTaskView extends JFrame{
         contents.add(checkBoxThirdTask);
         contents.add(checkBoxFourthTask);
         contents.add(checkBoxFifthTask);
+        contents.add(chooseIf1);
+        contents.add(chooseIf2);
 
 
         dialog.add(contents);

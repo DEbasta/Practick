@@ -3,14 +3,12 @@ package View;
 import Constants.Constants;
 import Logic.VarParse;
 import PDF_Gen.CreatePDF_Z1;
-import PDF_Gen.CreatePDF_Z3;
 import com.itextpdf.text.DocumentException;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
-import java.math.BigInteger;
 import java.net.URISyntaxException;
 
 public class FirstHomeTaskView extends JFrame{
@@ -22,6 +20,13 @@ public class FirstHomeTaskView extends JFrame{
 
         JCheckBox checkBoxFirstSecondTask = new JCheckBox(Constants.checkBox12);
         JCheckBox checkBoxThirdTask = new JCheckBox(Constants.checkBox3);
+
+        JTextField chooseIf1 = new JTextField(Constants.chooseIf1);
+        chooseIf1.setEditable(false);
+
+        JTextField chooseIf2 = new JTextField(Constants.chooseIf2);
+        chooseIf2.setEditable(false);
+
 
 
         numberOfGenVarField.addFocusListener(new FocusListener() {
@@ -97,6 +102,8 @@ public class FirstHomeTaskView extends JFrame{
         contents.add(numberOfGenVarField);
         contents.add(checkBoxFirstSecondTask);
         contents.add(checkBoxThirdTask);
+        contents.add(chooseIf1);
+        contents.add(chooseIf2);
 
 
 

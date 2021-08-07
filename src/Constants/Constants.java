@@ -32,7 +32,7 @@ public class Constants {
 
     public static final int mainViewWidth = 550;
 
-    public static final int mainViewHeight = 200;
+    public static final int mainViewHeight = 250;
 
     public static final int dialogViewWidth = 180;
 
@@ -117,6 +117,9 @@ public class Constants {
     public static final String [] rowSpecDiscription = {"Греч. символ альфа", "Греч. символ лямбда", "Греч. символ дельта", "икс в степени 2"};
 
     public static final int noteRows = 4;
+
+    public static final String chooseIf1 = "ВЫберите один или несколько вариантов, чтобы создать задачи одтельно,";
+    public static final String chooseIf2 = "добавить  или пересоздать имеющиеся";
 
 
 

@@ -26,6 +26,8 @@ public class MainView extends JFrame{
                 new FirstHomeTaskView(Constants.firstViewName,true);
             }
         });
+
+
         button2 = new JButton(Constants.mainViewSecondButton);
         button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
