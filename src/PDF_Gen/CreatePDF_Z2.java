@@ -77,7 +77,7 @@ public class CreatePDF_Z2 extends AbstractCreatePDF{
         }
 
         if (array[4].equals("55")){
-            array[37] = Constants.rowDZ2T6ppMaterial[Integer.parseInt(array[37])];
+            array[36] = Constants.rowDZ2T6ppMaterial[Integer.parseInt(array[36])];
             array[34] = Constants.rowDZ2dimensions[Integer.parseInt(array[34])];
             array[35] = Constants.rowDZ2dimensions[Integer.parseInt(array[35])];
         }

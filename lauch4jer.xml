@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\Users\denya\IdeaProjects\Practick\out\artifacts\Practick_jar\Practick.jar</jar>
-  <outfile>C:\Users\denya\IdeaProjects\Practick\src\VarGenKTO.exe</outfile>
+  <outfile>C:\Users\denya\IdeaProjects\Practick\VarGenKTO.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
